@@ -1,0 +1,192 @@
+.action-news {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.action-news .action-news-icon {
+    font-size: 18px;
+    padding: 4px;
+    display: inline-block;
+}
+
+.action-news .action-news-number {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: -6px;
+    height: 20px;
+    border-radius: 10px;
+    min-width: 20px;
+    background: #f5222d;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    -webkit-transform-origin: -10% center;
+    -ms-transform-origin: -10% center;
+    transform-origin: -10% center;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+    overflow: hidden;
+}
+
+.action-news .action-news-number-only {
+    display: inline-block;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    height: 20px;
+}
+
+.action-news-number-only > p {
+    height: 20px;
+    margin: 0;
+}
+
+.popover-box {
+    width: 336px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 9px 0 0 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    cursor: auto;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    white-space: normal;
+    font-weight: normal;
+    text-align: left;
+}
+
+.popover-hide {
+    display: none;
+}
+
+.popover-box .popover-arrow {
+    background: #fff;
+    width: 7.07106781px;
+    height: 7.07106781px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    display: block;
+    border-color: transparent;
+    border-style: solid;
+    right: 16px;
+    top: 6px;
+    -webkit-box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.06);
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.popover-box .popover-container {
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popover-tabs-nav {
+    overflow: hidden;
+    margin-bottom: -1px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.popover-tabs-tab {
+    display: inline-block;
+    height: 100%;
+    margin-right: 32px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    padding: 12px 16px;
+    -webkit-transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.popover-tabs-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    will-change: margin-left;
+    -webkit-transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.popover-tabs-list {
+    max-height: 400px;
+    overflow: auto;
+    width: 100%;
+}
+
+.popover-list-item {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e8e8e8;
+    transition: all .3s;
+    overflow: hidden;
+    cursor: pointer;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+}
+
+.popover-list-item-meta {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.popover-list-item-img {
+    margin-right: 16px;
+    background: #fff;
+    margin-top: 4px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.popover-list-item-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
