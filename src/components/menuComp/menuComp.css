@@ -1,0 +1,33 @@
+.menu-ln-container {
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.menu-ln-right {
+  float: right;
+  height: 100%;
+  margin-right: 12px;
+}
+
+.menu-ln-right .action-base {
+  cursor: pointer;
+  padding: 0 12px;
+  display: inline-block;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  height: 100%;
+}
+
+.menu-ln-right .action-base:hover {
+  background: #e6f7ff;
+}
+
+.menu-ln-right .header-personal {
+
+}
