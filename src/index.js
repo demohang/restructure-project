@@ -8,6 +8,7 @@ import counter from './reducers'
 import './styles/reset.css'
 import registerServiceWorker from './registerServiceWorker'
 import Routers from './router'
+import './assets/fonts/iconfont.css'
 
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
