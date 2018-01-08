@@ -94,7 +94,7 @@ class NoticeIcon extends Component {
               {this._showNum()}
             </span>
             {
-              count > 10 ?
+              count >= 10 ?
                 <span className="action-news-number-only" style={styles.number2_scroll}>
                   {this._showNum()}
                 </span>
