@@ -10,12 +10,16 @@ class MenuComp extends Component {
     }
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div className="menu-ln-container">
         <div className="menu-ln-right">
           <NoticeIcon 
-            
+            count={this.state.thisNum}
           />
           <span className="action-base header-personal">
             <span className="header-personal-image header-personal-image-sm">

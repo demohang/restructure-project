@@ -30,7 +30,7 @@ class NoticeIcon extends Component {
   }
 
   componentDidMount() {
-
+    
   }
 
   hidePopBox = () => {
