@@ -26,3 +26,6 @@ const render = () => ReactDOM.render(
 
 render()
 registerServiceWorker()
+
+// https://github.com/xianyulaodi/react-redux
+// https://www.cnblogs.com/xianyulaodi/p/5691382.html
