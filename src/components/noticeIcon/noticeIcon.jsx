@@ -12,26 +12,7 @@ class NoticeIcon extends Component {
     this.state = {
       num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       isPopoverShow: false,
-      data: [{
-        c_date: 1515411858000,
-        id: 23193,
-        message: "您有一个已回答的提问",
-        mtype: 0,
-        url: "/searchMain",
-        state: 0,
-        u_date: 1515411858000,
-        user_id: 182
-      }, {
-        c_date: 1515411854000,
-        id: 23192,
-        message: "您有一个已回答的提问",
-        mtype: 0,
-        url: "/searchMain",
-        state: 0,
-        u_date: 1515411854000,
-        user_id: 182
-      }
-      ]
+      data: []
     }
   }
 
