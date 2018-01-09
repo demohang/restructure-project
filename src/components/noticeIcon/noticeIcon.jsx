@@ -83,6 +83,9 @@ class NoticeIcon extends Component {
   render() {
     const { count } = this.props;
     let styles = {
+      number_left: {
+        left: count < 10 ? '21px' : '',
+      },
       number_scroll: {
         transform: 'translateY(-' + (count < 10 ? count : Math.floor(count / 10)) + '00%)'
       },
@@ -99,7 +102,7 @@ class NoticeIcon extends Component {
       <span className="action-base" onClick={this.onShowPopover.bind(this)}>
         <span className="action-news">
           <i className="action-news-icon iconfont icon-xiaoxizhongxin-"></i>
-          <sup className="action-news-number">
+          <sup className="action-news-number" style={styles.number_left}>
             <span className="action-news-number-only" style={styles.number_scroll}>
               {this._showNum()}
             </span>
