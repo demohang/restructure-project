@@ -19,7 +19,7 @@ class NoticeIcon extends Component {
         mtype: 0,
         url: "/searchMain",
         state: 0,
-        c_date: 1515411858000,
+        u_date: 1515411858000,
         user_id: 182
       }, {
         c_date: 1515411854000,
@@ -63,17 +63,19 @@ class NoticeIcon extends Component {
 
   /**
    * 通知菜单消息跳转事件
-   * @param {*} url 跳转路由
-   * @param {*} id 消息ID
+   * @param {*} item 条数据
+   * @function onItemClick 点击列表项的回调
    */
-  onNewsClick(url, id) {
-
+  onItemClick(item) {
+    if (this.props.onItemClick) {
+      this.props.onItemClick(item)
+    }
   }
 
   _showData() {
     return this.state.data.map((value, index) => {
       return (
-        <div className="popover-list-item" key={index} onClick={this.onNewsClick.bind(this, value.url, value.id)}>
+        <div className="popover-list-item" key={index} onClick={this.onItemClick.bind(this, value)}>
           <div className="popover-list-item-meta">
             {value.message}
           </div>
@@ -115,7 +117,7 @@ class NoticeIcon extends Component {
             }
           </sup>
         </span>
-        <div className={this.state.isPopoverShow ? "popover-box" : "popover-hide"} style={styles.popover} onClick={e => e.nativeEvent.stopImmediatePropagation()}>
+        <div className={this.state.isPopoverShow ? "popover-box zoom-big-enter zoom-big-enter-active" : "popover-hide"} style={styles.popover} onClick={e => e.nativeEvent.stopImmediatePropagation()}>
           <div className="popover-arrow"></div>
           <div className="popover-container clearfix">
             <div className="popover-tabs-nav">

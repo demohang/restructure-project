@@ -1,0 +1,76 @@
+.zoom-big-enter {
+    -webkit-animation-duration: 0.2s;
+            animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+}
+.zoom-big-leave {
+    -webkit-animation-duration: 0.2s;
+            animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+}
+
+.zoom-big-enter.zoom-big-enter-active {
+    -webkit-animation-name: zoomBigIn;
+            animation-name: zoomBigIn;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+}
+.zoom-big-leave.zoom-big-leave-active {
+    -webkit-animation-name: zoomBigOut;
+            animation-name: zoomBigOut;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+    pointer-events: none;
+}
+
+@-webkit-keyframes zoomBigIn {
+    0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    }
+    100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    }
+}
+@keyframes zoomBigIn {
+    0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    }
+    100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    }
+}
+
+@-webkit-keyframes zoomBigOut {
+    0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    }
+}
+@keyframes zoomBigOut {
+    0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    }
+}
