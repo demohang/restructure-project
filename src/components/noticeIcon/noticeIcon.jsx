@@ -62,13 +62,23 @@ class NoticeIcon extends Component {
   }
 
   /**
-   * 通知菜单消息跳转事件
+   * 通知菜单消息跳转回调
    * @param {*} item 条数据
    * @function onItemClick 点击列表项的回调
    */
   onItemClick(item) {
     if (this.props.onItemClick) {
       this.props.onItemClick(item)
+    }
+  }
+
+  /**
+   * 查看全部回调
+   * @function onClickAll 点击查看全部的回调
+   */
+  onClickAll() {
+    if (this.props.onClickAll) {
+      this.props.onClickAll()
     }
   }
 
@@ -128,7 +138,7 @@ class NoticeIcon extends Component {
                 {this._showData()}
               </div>
             </div>
-            <div className="popover-tabs-all">查看全部</div>
+            <div className="popover-tabs-all" onClick={this.onClickAll.bind(this)}>查看全部</div>
           </div>
         </div>
       </span>
