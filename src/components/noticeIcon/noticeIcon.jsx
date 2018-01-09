@@ -36,7 +36,12 @@ class NoticeIcon extends Component {
   }
 
   componentDidMount() {
-
+    // 如果父组件不传数据，则不往state中添加
+    if (this.props.data) {
+      this.setState({
+        data: this.props.data
+      });
+    }
   }
 
   hidePopBox() {
