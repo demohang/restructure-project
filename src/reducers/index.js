@@ -1,10 +1,17 @@
-export default (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default:
+// import { combineReducers } from 'redux' 
+import { READ_INFORMATION } from '../actions/actionTypes.js'
+ 
+function readNews(state, action) {
+  switch(action.type) {
+    case READ_INFORMATION:
+      return state
+    default: 
       return state
   }
 }
+
+// const readFun = combineReducers({
+//   readNews
+// })
+
+export default readNews

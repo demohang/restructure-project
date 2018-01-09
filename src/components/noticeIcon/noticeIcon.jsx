@@ -120,7 +120,7 @@ class NoticeIcon extends Component {
           <div className="popover-arrow"></div>
           <div className="popover-container clearfix">
             <div className="popover-tabs-nav">
-              <div className="popover-tabs-tab">通知</div>
+              <div className="popover-tabs-tab">通知({count})</div>
             </div>
             <div className="popover-tabs-container">
               <div className="popover-tabs-list">

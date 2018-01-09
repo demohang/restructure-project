@@ -4,23 +4,25 @@ import { createStore } from 'redux'
 import { BrowserRouter } from 'react-router-dom'
 import 'whatwg-fetch'
 import 'es6-promise'
-import counter from './reducers'
+import readFun from './reducers'
+import { Provider } from 'react-redux'
 import './styles/reset.css'
 import registerServiceWorker from './registerServiceWorker'
 import Routers from './router'
 import './assets/fonts/iconfont.css'
 import './styles/animations.css'
 
-const store = createStore(counter)
+const store = createStore(readFun)
 const rootEl = document.getElementById('root')
 
 const render = () => ReactDOM.render(
-  <BrowserRouter>
-    <Routers />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routers />
+    </BrowserRouter>
+  </Provider>,
   rootEl
 )
 
 render()
-store.subscribe(render)
 registerServiceWorker()
