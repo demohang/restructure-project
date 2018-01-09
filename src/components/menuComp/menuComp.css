@@ -22,6 +22,7 @@
   -o-transition: all .3s;
   transition: all .3s;
   height: 100%;
+  position: relative;
 }
 
 .menu-ln-right .action-base:hover {

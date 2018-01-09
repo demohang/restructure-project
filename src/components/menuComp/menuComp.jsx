@@ -11,7 +11,12 @@ class MenuComp extends Component {
   }
 
   componentDidMount() {
-
+    // let _this = this;
+    // setInterval(function () {
+    //   _this.setState({
+    //     thisNum: ++_this.state.thisNum
+    //   });
+    // },1000)
   }
 
   render() {

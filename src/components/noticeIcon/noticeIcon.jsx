@@ -6,41 +6,47 @@ import './noticeIcon.css'
  * @param count 图标上的消息总数
  */
 class NoticeIcon extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.hidePopBox = this.hidePopBox.bind(this);
     this.state = {
       num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       isPopoverShow: false,
-      data: [
-        {
-          id: '000000001',
-          avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ThXAXghbEsBCCSDihZxY.png',
-          title: '你收到了 14 份新周报',
-          datetime: '2017-08-09',
-          type: '通知',
-        }, {
-          id: '000000002',
-          avatar: 'https://gw.alipayobjects.com/zos/rmsportal/OKJXDXrmkNshAMvwtvhu.png',
-          title: '你推荐的 曲妮妮 已通过第三轮面试',
-          datetime: '2017-08-08',
-          type: '通知',
-        }
+      data: [{
+        c_date: 1515411858000,
+        id: 23193,
+        message: "您有一个已回答的提问",
+        mtype: 0,
+        url: "/searchMain",
+        state: 0,
+        c_date: 1515411858000,
+        user_id: 182
+      }, {
+        c_date: 1515411854000,
+        id: 23192,
+        message: "您有一个已回答的提问",
+        mtype: 0,
+        url: "/searchMain",
+        state: 0,
+        u_date: 1515411854000,
+        user_id: 182
+      }
       ]
     }
   }
 
   componentDidMount() {
-    
+
   }
 
-  hidePopBox = () => {
+  hidePopBox() {
     document.removeEventListener('click', this.hidePopBox);
     this.setState({
       isPopoverShow: false
     })
   }
 
-  _showNum = () => {
+  _showNum() {
     return this.state.num.map((value, key) => {
       return (
         <p key={key}>{value}</p>
@@ -48,22 +54,28 @@ class NoticeIcon extends Component {
     });
   }
 
-  onShowPopover = (e) => {
+  onShowPopover(e) {
     document.addEventListener('click', this.hidePopBox);
     this.setState({
       isPopoverShow: true
     });
   }
 
-  _showData = () => {
+  /**
+   * 通知菜单消息跳转事件
+   * @param {*} url 跳转路由
+   * @param {*} id 消息ID
+   */
+  onNewsClick(url, id) {
+
+  }
+
+  _showData() {
     return this.state.data.map((value, index) => {
       return (
-        <div className="popover-list-item" key={index}>
+        <div className="popover-list-item" key={index} onClick={this.onNewsClick.bind(this, value.url, value.id)}>
           <div className="popover-list-item-meta">
-            <span className="popover-list-item-img">
-              <img src={value.avatar} alt=""/>
-            </span>
-            {value.title}
+            {value.message}
           </div>
         </div>
       );
@@ -80,13 +92,13 @@ class NoticeIcon extends Component {
         transform: 'translateY(-' + count % 10 + '00%)'
       },
       popover: {
-        left: '986.578px',
+        left: '-292px',
         top: '30px',
         transformOrigin: '316px 16px 0px'
       }
     }
     return (
-      <span className="action-base" onClick={this.onShowPopover}>
+      <span className="action-base" onClick={this.onShowPopover.bind(this)}>
         <span className="action-news">
           <i className="action-news-icon iconfont icon-xiaoxizhongxin-"></i>
           <sup className="action-news-number">
@@ -114,6 +126,7 @@ class NoticeIcon extends Component {
                 {this._showData()}
               </div>
             </div>
+            <div className="popover-tabs-all">查看全部</div>
           </div>
         </div>
       </span>
