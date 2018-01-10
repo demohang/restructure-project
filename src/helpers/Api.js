@@ -125,7 +125,7 @@ export const API = {
    * -------------------------------------参入的参数---------------------------------------------
    * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
    * password            String       true                       密码
- * codeString          String       true                       匹配码
+ 	* codeString          String       true                       匹配码
    */
   UpdateLuser: 'Luser/updateLuser',
 
@@ -165,4 +165,12 @@ export const API = {
 	 * lessonid             Integer            true                       课时ID
 	 */		
 	FindLessonById: 'lesson/findLessonById',
+
+	/**
+	 * 获取消息数量
+	 * post 获取配置信息
+	 * -------------------------------------参入的参数---------------------------------------------
+	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
+	 */	
+	Findnoreadmessagecount: 'message/findnoreadmessagecount'
 };

@@ -1,17 +1,17 @@
-// import { combineReducers } from 'redux' 
-import { READ_INFORMATION } from '../actions/actionTypes.js'
+import { combineReducers } from 'redux' 
+import { GET_NEWSNUMBER } from '../actions/actionTypes.js'
  
-function readNews(state, action) {
-  switch(action.type) {
-    case READ_INFORMATION:
-      return state
-    default: 
+function getNuewsNum(state = 0, action) {
+  switch (action.type) {
+    case GET_NEWSNUMBER:
+      return action.num  //这里面的值是和action里面的值对应的
+    default:
       return state
   }
 }
 
-// const readFun = combineReducers({
-//   readNews
-// })
+const rootReducer = combineReducers({
+  getNuewsNum
+})
 
-export default readNews
+export default rootReducer

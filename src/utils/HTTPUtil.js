@@ -1,6 +1,6 @@
 export const HTTPUtil = {};
 
-export const ServerAPI = 'http://edusys.lenovo.com';
+export const ServerAPI = 'http://10.103.241.3:8080/lls-web/';
 /**
  * 基于 fetch 封装的 GET请求
  * @param url
@@ -24,11 +24,11 @@ HTTPUtil.get = function(url, headers) {
                 reject({status:response.status});
             }
         }).then((response) => {
-            if (response.result == 200) {
+            if (response.result === 200) {
                 resolve(response);
-            } else if (response.result == 404) {
+            } else if (response.result === 404) {
 
-            } else if (response.result == 500) {
+            } else if (response.result === 500) {
 
             }
         }).catch((err)=> {
@@ -62,11 +62,11 @@ HTTPUtil.post = function(url, data, headers) {
                 reject({status:response.status});
             }
         }).then((response) => {
-            if (response.result == 200) {
+            if (response.result === 200) {
                 resolve(response);
-            } else if (response.result == 404) {
+            } else if (response.result === 404) {
 
-            } else if (response.result == 500) {
+            } else if (response.result === 500) {
 
             }
         }).catch((err)=> {
