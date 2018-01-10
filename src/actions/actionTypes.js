@@ -4,6 +4,7 @@ import { API } from '../helpers/Api';
 export const READ_INFORMATION = 'READ_INFORMATION'; // 阅读消息
 export const RECEIVE_TOP = 'RECEIVE_TOP'; // 获取top4数据
 export const GET_NEWSNUMBER = 'GET_NEWSNUMBER'; // 消息条目数
+export const GET_MEANSLUSER = 'GET_MEANSLUSER' // 用户信息
 
 /**
  * 消息已读
@@ -27,10 +28,21 @@ export function receiveTop(json) {
     }
 }
 
+/**
+ * 获取消息数量
+ * @param {*} num 
+ */
 export function newsNumber(num) {
     return {
         type: GET_NEWSNUMBER,
         num
+    }
+}
+
+export function getMeansLuser(user) {
+    return {
+        type: GET_MEANSLUSER,
+        user: user
     }
 }
 
@@ -51,6 +63,20 @@ function fetchPosts() {
 export function findNoreadMessageCount() {
     return (dispatch, getState) => {
         return dispatch(fetchPosts())
+    }
+}
+
+function fetchPosts2() {
+    return function (dispatch) {
+        return HTTPUtil.post(API.MeansLuser).then((json) => {
+            dispatch(getMeansLuser(json.user))
+        })
+    }
+}
+
+export function meansLuser() {
+    return (dispatch, getState) => {
+        return dispatch(fetchPosts2())
     }
 }
 

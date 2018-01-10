@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux' 
-import { GET_NEWSNUMBER } from '../actions/actionTypes.js'
+import { GET_NEWSNUMBER, GET_MEANSLUSER } from '../actions/actionTypes.js'
  
+// 消息数量
 function getNuewsNum(state = 0, action) {
   switch (action.type) {
     case GET_NEWSNUMBER:
@@ -10,8 +11,19 @@ function getNuewsNum(state = 0, action) {
   }
 }
 
+// 用户信息
+function getUserMessage(state = { }, action) {
+  switch (action.type) {
+    case GET_MEANSLUSER:
+      return Object.assign({}, state, action.user)
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
-  getNuewsNum
+  getNuewsNum,
+  getUserMessage
 })
 
 export default rootReducer
