@@ -11,10 +11,10 @@ export const GET_MEANSLUSER = 'GET_MEANSLUSER' // 用户信息
  * @param {*} newsID 消息ID
  */
 export function readInformation(newsID) {
-    return { 
-        type: READ_INFORMATION, 
-        newsID
-    }
+  return {
+    type: READ_INFORMATION,
+    newsID
+  }
 }
 
 /**
@@ -22,10 +22,10 @@ export function readInformation(newsID) {
  * @param {*} json top4数据
  */
 export function receiveTop(json) {
-    return {
-        type: RECEIVE_TOP,
-        posts: json
-    }
+  return {
+    type: RECEIVE_TOP,
+    posts: json
+  }
 }
 
 /**
@@ -33,50 +33,50 @@ export function receiveTop(json) {
  * @param {*} num 
  */
 export function newsNumber(num) {
-    return {
-        type: GET_NEWSNUMBER,
-        num
-    }
+  return {
+    type: GET_NEWSNUMBER,
+    num
+  }
 }
 
 export function getMeansLuser(user) {
-    return {
-        type: GET_MEANSLUSER,
-        user: user
-    }
+  return {
+    type: GET_MEANSLUSER,
+    user: user
+  }
 }
 
 // 登录 暂时这么写
-HTTPUtil.post(API.Login,'loginname=123456&password=123456&code=').then((json) => {
-    
+HTTPUtil.post(API.Login, 'loginname=123456&password=123456&code=').then((json) => {
+
 })
 
 
 function fetchPosts() {
-    return function (dispatch) {
-        return HTTPUtil.post(API.Findnoreadmessagecount).then((json) => {
-            dispatch(newsNumber(json.num))
-        })
-    }
+  return function (dispatch) {
+    return HTTPUtil.post(API.Findnoreadmessagecount).then((json) => {
+      dispatch(newsNumber(json.num))
+    })
+  }
 }
 
 export function findNoreadMessageCount() {
-    return (dispatch, getState) => {
-        return dispatch(fetchPosts())
-    }
+  return (dispatch, getState) => {
+    return dispatch(fetchPosts())
+  }
 }
 
 function fetchPosts2() {
-    return function (dispatch) {
-        return HTTPUtil.post(API.MeansLuser).then((json) => {
-            dispatch(getMeansLuser(json.user))
-        })
-    }
+  return function (dispatch) {
+    return HTTPUtil.post(API.MeansLuser).then((json) => {
+      dispatch(getMeansLuser(json.user))
+    })
+  }
 }
 
 export function meansLuser() {
-    return (dispatch, getState) => {
-        return dispatch(fetchPosts2())
-    }
+  return (dispatch, getState) => {
+    return dispatch(fetchPosts2())
+  }
 }
 
