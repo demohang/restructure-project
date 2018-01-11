@@ -24,7 +24,7 @@ export function readInformation(newsID) {
 export function receiveTop(json) {
   return {
     type: RECEIVE_TOP,
-    posts: json
+    news: json
   }
 }
 
@@ -51,8 +51,7 @@ HTTPUtil.post(API.Login, 'loginname=123456&password=123456&code=').then((json) =
 
 })
 
-
-function fetchPosts() {
+export function findNoreadMessageCount() {
   return function (dispatch) {
     return HTTPUtil.post(API.Findnoreadmessagecount).then((json) => {
       dispatch(newsNumber(json.num))
@@ -60,13 +59,7 @@ function fetchPosts() {
   }
 }
 
-export function findNoreadMessageCount() {
-  return (dispatch, getState) => {
-    return dispatch(fetchPosts())
-  }
-}
-
-function fetchPosts2() {
+export function meansLuser() {
   return function (dispatch) {
     return HTTPUtil.post(API.MeansLuser).then((json) => {
       dispatch(getMeansLuser(json.user))
@@ -74,9 +67,10 @@ function fetchPosts2() {
   }
 }
 
-export function meansLuser() {
-  return (dispatch, getState) => {
-    return dispatch(fetchPosts2())
+export function findNoReadListsTop4() {
+  return function (dispatch) {
+    return HTTPUtil.post(API.Findnoreadliststop4).then((json) => {
+      dispatch(receiveTop(json.list))
+    })
   }
 }
-

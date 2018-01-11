@@ -12,17 +12,11 @@ class NoticeIcon extends Component {
     this.state = {
       num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       isPopoverShow: false,
-      data: []
     }
   }
 
   componentDidMount() {
     // 如果父组件不传数据，则不往state中添加
-    if (this.props.data) {
-      this.setState({
-        data: this.props.data
-      });
-    }
   }
 
   hidePopBox() {
@@ -69,7 +63,7 @@ class NoticeIcon extends Component {
   }
 
   _showData() {
-    return this.state.data.map((value, index) => {
+    return this.props.data.map((value, index) => {
       return (
         <div className="popover-list-item" key={index} onClick={this.onItemClick.bind(this, value)}>
           <div className="popover-list-item-meta">

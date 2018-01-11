@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux' 
-import { GET_NEWSNUMBER, GET_MEANSLUSER } from '../actions/actionTypes.js'
+import { GET_NEWSNUMBER, GET_MEANSLUSER, RECEIVE_TOP } from '../actions/actionTypes.js'
  
 // 消息数量
 function getNuewsNum(state = 0, action) {
@@ -21,9 +21,21 @@ function getUserMessage(state = { }, action) {
   }
 }
 
+// 获取前4条未读消息
+function getNoreadListsTop4(state = [], action) {
+  switch (action.type) {
+    case RECEIVE_TOP:
+      // return Object.assign({}, state, action.news)
+      return [...action.news];
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   getNuewsNum,
-  getUserMessage
+  getUserMessage,
+  getNoreadListsTop4
 })
 
 export default rootReducer
