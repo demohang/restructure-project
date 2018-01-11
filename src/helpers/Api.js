@@ -180,5 +180,14 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 */
-  Findnoreadliststop4: 'message/findnoreadliststop4'
+	Findnoreadliststop4: 'message/findnoreadliststop4',
+	
+	/**
+	 * 批量消息已读
+	 * post 获取配置信息
+	 * -------------------------------------参入的参数---------------------------------------------
+	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
+	 * messids 						 String              true                       消息ID
+	 */
+	MessagesToRead: 'message/messagesToRead'
 };

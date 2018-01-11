@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MenuComp from '../components/menuComp/menuComp.jsx'
 import { connect } from 'react-redux'
-import { findNoreadMessageCount, meansLuser, findNoReadListsTop4 } from '../actions/actionTypes.js'
+import { findNoreadMessageCount, meansLuser, findNoReadListsTop4, messagesToRead } from '../actions/actionTypes.js'
 
 class MyMajorPage extends Component {
   constructor(props) {
@@ -15,8 +15,10 @@ class MyMajorPage extends Component {
     dispatch(findNoReadListsTop4())
   }
 
-  aaa() {
-    this.props.dispatch(meansLuser())
+  onItemClick(item) {
+    this.props.dispatch(messagesToRead(item.id))
+    this.props.dispatch(findNoReadListsTop4())
+    this.props.dispatch(findNoreadMessageCount())
   }
 
   render() {
@@ -27,6 +29,7 @@ class MyMajorPage extends Component {
           getNuewsNum={ getNuewsNum }
           name={ getUserMessage.name }
           data={ getNoreadListsTop4 }
+          onItemClick={ this.onItemClick.bind(this) }
         />
       </div>
     )
@@ -35,11 +38,12 @@ class MyMajorPage extends Component {
 
 function mapStateToProps(state) {
   // 这里很重要，这里需要用到的状态都要返回，不然无法实现
-  const { getNuewsNum, getUserMessage, getNoreadListsTop4 } = state
+  const { getNuewsNum, getUserMessage, getNoreadListsTop4, readNews } = state
   return {
     getNuewsNum,
     getUserMessage,
-    getNoreadListsTop4
+    getNoreadListsTop4,
+    readNews
   }
 }
 

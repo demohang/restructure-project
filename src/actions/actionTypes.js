@@ -10,10 +10,9 @@ export const GET_MEANSLUSER = 'GET_MEANSLUSER' // 用户信息
  * 消息已读
  * @param {*} newsID 消息ID
  */
-export function readInformation(newsID) {
+export function readInformation() {
   return {
     type: READ_INFORMATION,
-    newsID
   }
 }
 
@@ -51,6 +50,7 @@ HTTPUtil.post(API.Login, 'loginname=123456&password=123456&code=').then((json) =
 
 })
 
+// 未读消息数量
 export function findNoreadMessageCount() {
   return function (dispatch) {
     return HTTPUtil.post(API.Findnoreadmessagecount).then((json) => {
@@ -59,6 +59,7 @@ export function findNoreadMessageCount() {
   }
 }
 
+// 用户信息
 export function meansLuser() {
   return function (dispatch) {
     return HTTPUtil.post(API.MeansLuser).then((json) => {
@@ -67,10 +68,20 @@ export function meansLuser() {
   }
 }
 
+// 未读消息前四条
 export function findNoReadListsTop4() {
   return function (dispatch) {
     return HTTPUtil.post(API.Findnoreadliststop4).then((json) => {
       dispatch(receiveTop(json.list))
+    })
+  }
+}
+
+// 阅读消息
+export function messagesToRead(messids) {
+  return function (dispatch) {
+    return HTTPUtil.post(API.MessagesToRead,'messids=' + messids).then((json) => {
+      dispatch(readInformation())
     })
   }
 }

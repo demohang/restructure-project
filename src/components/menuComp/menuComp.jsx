@@ -8,7 +8,9 @@ class MenuComp extends Component {
   }
 
   onItemClick(item) {
-    console.log(item);
+    if (this.props.onItemClick) {
+      this.props.onItemClick(item)
+    }
   }
 
   render() {
