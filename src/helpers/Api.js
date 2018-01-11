@@ -7,7 +7,7 @@ export const API = {
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * 无
 	 */
-	FindMajor: 'major/findMajor',
+  FindMajor: 'major/findMajor',
 
 	/**
 	 * 获取专业介绍
@@ -15,8 +15,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * majorid              Int               true                      专业ID
-	 */		
-	Majorindex: 'major/majorindex/',
+	 */
+  Majorindex: 'major/majorindex/',
 
 	/**
 	 * 获取学生当前可选课程
@@ -24,8 +24,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * userid               Int               true                      学生ID
-	 */		
-	FindCourseByUser: 'major/findCourseByUser',
+	 */
+  FindCourseByUser: 'major/findCourseByUser',
 
 	/**
 	 * 登陆接口
@@ -35,8 +35,8 @@ export const API = {
 	 * loginname            String            true                      用户名
 	 * password             String            true                      用户密码
 	 * code                 String            true                      验证码
-	 */		
-	Login: 'Luser/login',
+	 */
+  Login: 'Luser/login',
 
 	/**
 	 * 退出登录接口
@@ -45,7 +45,7 @@ export const API = {
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * 无
 	 */
-	BreakLogin: 'Luser/breakLogin',
+  BreakLogin: 'Luser/breakLogin',
 
 	/**
 	 * 验证码接口
@@ -53,8 +53,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * 无
-	 */		
-	Code: 'Luser/code',	
+	 */
+  Code: 'Luser/code',
 
 	/**
 	 * 最后一次观看课时接口
@@ -63,7 +63,7 @@ export const API = {
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * 无
 	 */
-	GetLastLesson: 'Luser/getLastLesson',
+  GetLastLesson: 'Luser/getLastLesson',
 
 	/**
 	 * 批量录入考勤-查询班级所有学生接口
@@ -71,8 +71,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * classid              Integer            true                      班级ID
-	 */		
-	GetLuserStudent: 'Luser/getLuserStudent',	
+	 */
+  GetLuserStudent: 'Luser/getLuserStudent',
 
 	/**
 	 * 修改密码接口
@@ -80,8 +80,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * password             String            true                       密码
-	 */		
-	IfLuserpassword: 'Luser/ifLuserpassword',
+	 */
+  IfLuserpassword: 'Luser/ifLuserpassword',
 
 	/**
 	 * 新密码接口
@@ -89,8 +89,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * password             String            true                       新密码
-	 */		
-	LoginUserPassword: 'Luser/loginUserPassword',
+	 */
+  LoginUserPassword: 'Luser/loginUserPassword',
 
 	/**
 	 * 获取学生信息接口
@@ -98,8 +98,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * 无
-	 */		
-	MeansLuser: 'Luser/meansLuser',
+	 */
+  MeansLuser: 'Luser/meansLuser',
 
 	/**
 	 * 用户升级提示响应
@@ -107,8 +107,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * 无
-	 */		
-	UpLevel: 'Luser/upLevel',
+	 */
+  UpLevel: 'Luser/upLevel',
 
   /**
    * 发送邮件
@@ -135,8 +135,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * courseid             Integer            true                       课程ID
-	 */		
-	Courseindex: 'course/courseindex',
+	 */
+  Courseindex: 'course/courseindex',
 
 	/**
 	 * 根据班级id查询课程
@@ -145,8 +145,8 @@ export const API = {
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * classid              Integer            true                       班级ID
 	 * term                 Integer            true                       学期
-	 */		
-	FindCoursebyClassid: 'course/findCoursebyClassid',
+	 */
+  FindCoursebyClassid: 'course/findCoursebyClassid',
 
 	/**
 	 * 获取课程详情
@@ -154,8 +154,8 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * courseid             Integer            true                       课程ID
-	 */		
-	FindCourseById: 'lesson/findCourseById',
+	 */
+  FindCourseById: 'lesson/findCourseById',
 
 	/**
 	 * 获取课时详情
@@ -163,14 +163,22 @@ export const API = {
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
 	 * lessonid             Integer            true                       课时ID
-	 */		
-	FindLessonById: 'lesson/findLessonById',
+	 */
+  FindLessonById: 'lesson/findLessonById',
 
 	/**
 	 * 获取消息数量
 	 * post 获取配置信息
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
-	 */	
-	Findnoreadmessagecount: 'message/findnoreadmessagecount'
+	 */
+  Findnoreadmessagecount: 'message/findnoreadmessagecount',
+
+	/**
+	 * 获取前4条未读消息
+	 * post 获取配置信息
+	 * -------------------------------------参入的参数---------------------------------------------
+	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
+	 */
+  Findnoreadliststop4: 'message/findnoreadliststop4'
 };
