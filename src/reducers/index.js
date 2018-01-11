@@ -25,7 +25,6 @@ function getUserMessage(state = { }, action) {
 function getNoreadListsTop4(state = [], action) {
   switch (action.type) {
     case RECEIVE_TOP:
-      // return Object.assign({}, state, action.news)
       return [...action.news];
     default:
       return state
