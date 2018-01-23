@@ -4,6 +4,9 @@ import './noticeIcon.css'
 /**
  * 通知菜单
  * @param count 图标上的消息总数
+ * @param data 列表数据
+ * @function onItemClick 点击列表条目的回调函数
+ * @function onClickAll 点击查看全部的回调函数
  */
 class NoticeIcon extends Component {
   constructor() {
@@ -16,7 +19,7 @@ class NoticeIcon extends Component {
   }
 
   componentDidMount() {
-    // 如果父组件不传数据，则不往state中添加
+    
   }
 
   hidePopBox() {
