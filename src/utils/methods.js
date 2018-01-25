@@ -27,10 +27,9 @@ export function dataTransformation(s_date,type) {
     if (s < 10) {
         s = "0" + s
     }
-    let ruData = null;
     if (type === undefined || type === '-') {
-        return ruData = Y + "-" + M + "-" + T + " " + S + ":" + m + ":" + s;
+        return Y + "-" + M + "-" + T + " " + S + ":" + m + ":" + s;
     } else if (type === '/') {
-        return ruData = Y + "/" + M + "/" + T + " " + S + ":" + m + ":" + s;
+        return Y + "/" + M + "/" + T + " " + S + ":" + m + ":" + s;
     }
 }

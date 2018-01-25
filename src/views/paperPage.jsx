@@ -2,24 +2,32 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { allPageQuestionAndAnswer } from '../actions/actionTypes.js'
 import PaperHeader from '../components/paper/paperHeader/paperHeader.jsx'
+import { dataTransformation } from '../utils/methods'
 
 class paperPage extends Component {
   constructor(props) {
     super(props);
   }
 
+  componentWillMount() {
+    
+  }
+
   componentDidMount() {
-      const { dispatch } = this.props;
-      dispatch(allPageQuestionAndAnswer(93,''))
-    // question/byAllPageQuestionAdnAnswer
+    const { dispatch } = this.props;
+    dispatch(allPageQuestionAndAnswer(93, ''))
   }
 
   render() {
     const { getPaper } = this.props;
-    console.log(getPaper);
     return (
       <div>
-        <PaperHeader />
+        <PaperHeader
+          name={getPaper.name}
+          score={getPaper.score}
+          paperName={getPaper.exam ? getPaper.exam.name : ''}
+          time={getPaper.exam ? dataTransformation(getPaper.exam.s_date) : ''}
+        />
       </div>
     )
   }
