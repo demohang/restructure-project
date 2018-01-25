@@ -110,23 +110,23 @@ export const API = {
 	 */
   UpLevel: 'Luser/upLevel',
 
-  /**
-   * 发送邮件
-   * post 获取配置信息
-   * -------------------------------------参入的参数---------------------------------------------
-   * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
-   * toEmails            String       true                       邮箱号
-   */
+	/**
+	 * 发送邮件
+	 * post 获取配置信息
+	 * -------------------------------------参入的参数---------------------------------------------
+	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
+	 * toEmails            String       true                       邮箱号
+	 */
   SendEmailTask: 'Luser/sendEmailTask',
 
-  /**
-   * 重置用户密码
-   * post 获取配置信息
-   * -------------------------------------参入的参数---------------------------------------------
-   * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
-   * password            String       true                       密码
- 	* codeString          String       true                       匹配码
-   */
+	/**
+	 * 重置用户密码
+	 * post 获取配置信息
+	 * -------------------------------------参入的参数---------------------------------------------
+	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
+	 * password            String       true                       密码
+		* codeString          String       true                       匹配码
+	*/
   UpdateLuser: 'Luser/updateLuser',
 
 	/**
@@ -187,7 +187,17 @@ export const API = {
 	 * post 获取配置信息
 	 * -------------------------------------参入的参数---------------------------------------------
 	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
-	 * messids 						 String              true                       消息ID
+	 * messids 				String              true                       消息ID
 	 */
-	MessagesToRead: 'message/messagesToRead'
+	MessagesToRead: 'message/messagesToRead',
+
+	/**
+	 * 查询试卷所有题目
+	 * post 获取配置信息
+	 * -------------------------------------参入的参数---------------------------------------------
+	 * name(字段名称)       type(类型)   Required(是否是必须的)    description(描述)
+	 * examId 				integer             true                试卷ID
+	 * userid 				integer             true                用户ID
+	 */
+	ByAllPageQuestionAdnAnswer: 'question/byAllPageQuestionAdnAnswer'
 };

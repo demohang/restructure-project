@@ -50,6 +50,17 @@ export function getMeansLuser(user) {
   }
 }
 
+/**
+ * 查询试卷所有题目
+ * @param {*} json 
+ */
+export function getAllPageQuestionAndAnswer(json) {
+  return {
+    type: GET_PAPERQUESTION,
+    json: json
+  }
+}
+
 // 登录 暂时这么写
 HTTPUtil.post(API.Login, 'loginname=123456&password=123456&code=').then((json) => {
 
@@ -87,6 +98,15 @@ export function messagesToRead(messids) {
   return function (dispatch) {
     return HTTPUtil.post(API.MessagesToRead,'messids=' + messids).then((json) => {
       dispatch(readInformation())
+    })
+  }
+}
+
+// 查询试卷所有题目
+export function allPageQuestionAndAnswer(examId,userid) {
+  return function (dispatch) {
+    return HTTPUtil.post(API.ByAllPageQuestionAdnAnswer,'examId=' + examId + '&userid=' + userid).then((json) => {
+      dispatch(getAllPageQuestionAndAnswer())
     })
   }
 }
