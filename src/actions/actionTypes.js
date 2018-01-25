@@ -5,6 +5,7 @@ export const READ_INFORMATION = 'READ_INFORMATION'; // 阅读消息
 export const RECEIVE_TOP = 'RECEIVE_TOP'; // 获取top4数据
 export const GET_NEWSNUMBER = 'GET_NEWSNUMBER'; // 消息条目数
 export const GET_MEANSLUSER = 'GET_MEANSLUSER' // 用户信息
+export const GET_PAPERQUESTION = 'GET_PAPERQUESTION' // 用户信息
 
 /**
  * 消息已读
@@ -38,6 +39,10 @@ export function newsNumber(num) {
   }
 }
 
+/**
+ * 获取用户信息
+ * @param {*} user 
+ */
 export function getMeansLuser(user) {
   return {
     type: GET_MEANSLUSER,
