@@ -106,7 +106,7 @@ export function messagesToRead(messids) {
 export function allPageQuestionAndAnswer(examId,userid) {
   return function (dispatch) {
     return HTTPUtil.post(API.ByAllPageQuestionAdnAnswer,'examId=' + examId + '&userid=' + userid).then((json) => {
-      dispatch(getAllPageQuestionAndAnswer())
+      dispatch(getAllPageQuestionAndAnswer(json))
     })
   }
 }

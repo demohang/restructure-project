@@ -40,12 +40,12 @@ function readNews(state = 200, action) {
   }
 }
 
-function getPaper(state = 200, action) {
+function getPaper(state = {}, action) {
   switch (action.type) {
     case GET_PAPERQUESTION:
-      return state;
+      return Object.assign({}, state, action.json);
     default:
-      return 500
+      return state
   }
 }
 

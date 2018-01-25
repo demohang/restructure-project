@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { allPageQuestionAndAnswer } from '../actions/actionTypes.js'
 
 class paperPage extends Component {
   constructor(props) {
@@ -7,11 +8,14 @@ class paperPage extends Component {
   }
 
   componentDidMount() {
+      const { dispatch } = this.props;
+      dispatch(allPageQuestionAndAnswer(93,''))
     // question/byAllPageQuestionAdnAnswer
   }
 
   render() {
-
+    const { getPaper } = this.props;
+    console.log(getPaper);
     return (
       <div>
         
@@ -22,12 +26,9 @@ class paperPage extends Component {
 
 function mapStateToProps(state) {
   // 这里很重要，这里需要用到的状态都要返回，不然无法实现
-//   const { getNuewsNum, getUserMessage, getNoreadListsTop4, readNews } = state
+  const { getPaper } = state
   return {
-    // getNuewsNum,
-    // getUserMessage,
-    // getNoreadListsTop4,
-    // readNews
+    getPaper
   }
 }
 
