@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { allPageQuestionAndAnswer } from '../actions/actionTypes.js'
+import PaperHeader from '../components/paper/paperHeader/paperHeader.jsx'
 
 class paperPage extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class paperPage extends Component {
     console.log(getPaper);
     return (
       <div>
-        
+        <PaperHeader />
       </div>
     )
   }
