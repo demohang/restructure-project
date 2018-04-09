@@ -18,6 +18,10 @@ class paperPage extends Component {
     dispatch(allPageQuestionAndAnswer(93, ''))
   }
 
+  getWriteNum() {
+    
+  }
+
   render() {
     const { getPaper } = this.props;
     return (

@@ -16,9 +16,9 @@ class MyMajorPage extends Component {
   }
 
   onItemClick(item) {
-    this.props.dispatch(messagesToRead(item.id))
-    this.props.dispatch(findNoReadListsTop4())
-    this.props.dispatch(findNoreadMessageCount())
+    // this.props.dispatch(messagesToRead(item.id))
+    // this.props.dispatch(findNoReadListsTop4())
+    // this.props.dispatch(findNoreadMessageCount())
   }
 
   render() {
